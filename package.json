@@ -1,0 +1,28 @@
+{
+  "name": "itis-5166-project",
+  "version": "1.0.0",
+  "description": "ITIS 5166 Web Application Project",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "luxon": "^2.0.2",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kayli-Garwood/ITIS-5166-Project.git"
+  },
+  "author": "Kayli Garwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kayli-Garwood/ITIS-5166-Project/issues"
+  },
+  "homepage": "https://github.com/Kayli-Garwood/ITIS-5166-Project#readme"
+}

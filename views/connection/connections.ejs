@@ -1,0 +1,17 @@
+<%- include('../partial/header.ejs')%>
+<div class = "content">
+  <%  if(connections.length) { %>
+        <h1>Select a connection to learn more!</h1>
+        <%for(var i =0; i < category.length; i++){ %>
+            <h1><em><%= category[i] %></em></h1>
+            <% for(var j=0; j < connections.length; j++){
+                if(connections[j].topic == category[i]){%>
+                    <a href = "/connections/<%=connections[j].id%>"> <h2><%= connections[j].title%></h2></a>
+            <%}}%>
+        <%} %>
+    <% } else { %>
+        <h1>There are no classes available to sign up!</h1>
+  <%  } %>
+</div>
+
+<%- include('../partial/footer.ejs')%>

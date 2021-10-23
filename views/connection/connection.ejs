@@ -1,0 +1,19 @@
+<%- include('../partial/header.ejs')%>
+
+<div class = "content">
+    <!-- <h4><%=connection.topic%></h4> -->
+    <h1><u><em><%=connection.title %></em></u></h1>
+    <h2><u>Host:</u> <%=connection.hostName%></h2>
+    <div id = "connection"> <h2><u>Details:</u> <%=connection.details%></h2></div>
+    <h2><u>Address:</u> <%=connection.address%></h2>
+    <h2><u>Date:</u> <%=connection.date%></h2>
+    <h2><u>Start Time:</u> <%=connection.startTime%></h2>
+    <h2><u>End Time:</u> <%=connection.endTime%></h2>
+    <img class = "connect" src= "<%=connection.image%>" alt="connect">
+    <form>
+        <button type="submit" formmethod="GET" formaction="/connections/<%= connection.id%>/edit">Edit</button>
+        <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>/?_method=DELETE">Delete</button>
+    </form>
+  </div>
+
+<%- include('../partial/footer.ejs')%>

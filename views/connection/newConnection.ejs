@@ -1,0 +1,47 @@
+<%- include('../partial/header.ejs')%>
+<div class = "new">
+  <form action = '/connections' method = 'POST'>
+    <h1> Create a new connection below!</h1>
+      <table>
+          <tr>
+              <td><label for="topic" >Topic</label></td>
+              <td><input type="text" id="topic" name="topic" class = "fixed-width"></td>
+          </tr>
+          <tr>
+            <td><label for="title" >Title</label></td>
+            <td><input type="text" id="title" name="title" class = "fixed-width"></td>
+        </tr>
+          <tr>
+          <td><label for="hostName">Host Name</label></td>
+          <td><input type="text" id="hostName" name="hostName" class = "fixed-width"></td>
+        </tr>
+          <tr><td class = "align-top"><label for="details">Details</label></td>
+              <td><textarea rows="5" id="details" name="details" class = "fixed-width"></textarea></td>
+          </tr>
+          <tr>
+            <td><label for="address" >Address</label></td>
+            <td><input type="text" id="address" name="address" class = "fixed-width"></td>
+          </tr>
+          <tr>
+            <td><label for="date" >Date</label></td>
+            <td><input type="date" id="date" name="date" class = "fixed-width"></td>
+          </tr>
+          <tr>
+            <td><label for="startTime">Start Time</label></td>
+            <td><input type="time" id="startTime" name="startTime" class = "fixed-width"></td>
+          </tr>
+          <tr>
+            <td><label for="endTime"> End Time</label></td>
+            <td><input type="time" id="endTime" name="endTime" class = "fixed-width"></td>
+          </tr>
+          <tr>
+            <td><label for="image" >Image URL</label></td>
+            <td><input type="url" id="image" name="image" class = "fixed-width"></td>
+          </tr>
+          <tr>
+              <td colspan="2" class = "align-right"><button>Submit</button></td>
+          </tr>
+          </table>        
+  </form>
+  </div>
+<%- include('../partial/footer.ejs')%>
