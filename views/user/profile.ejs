@@ -1,0 +1,56 @@
+<%- include('../partial/header.ejs')%>
+      <%  if(connections.length) {%>
+        <h1><%= user.firstName + "'s connections: "%> </h1>
+        <table class="profile">
+            <tr>
+                <th>Connection</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            <%connections.forEach(connection => {%>
+                    <tr>
+                        <td><%=connection.title%></td>
+                        <td><%=connection.topic%></td>
+                        <td>
+                            <form>
+                                <button type="submit" formmethod="GET" formaction="/connections/<%= connection.id%>/edit">Update</button>
+                                <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>/?_method=DELETE">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+           <% }); %>
+        </table>            
+  <%  } else { %>
+        <h1>You have not created any connections yet!</h1>
+   <% }%>
+
+    <% if(rsvpArr.length) { %>
+       <h1><%= user.firstName + "'s RSVP's: "%> </h1>
+    <table class="profile2">
+        <tr>
+            <th>Connection</th>
+            <th>Category</th>
+            <th>Going?</th>
+            <th>Actions</th>
+        </tr>
+        <%rsvpArr.forEach(rsvp => { %>
+            <tr>
+                <td><%=rsvp.ConnectionID.title%></td>
+                <td><%=rsvp.ConnectionID.topic%></td>
+                <td><%=rsvp.status%></td>
+                <td>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/connections/<%=rsvp.ConnectionID._id%>">Update</button>
+                        <button type="submit" formmethod="POST" formaction="/connections/<%=rsvp.ConnectionID._id%>/rsvpDelete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+      <%  })%>
+    </table>
+  <% } else { %>
+       <h1>You have not rsvped any connection yet!</h1>
+ <%  } %>
+</body>
+
+</html>
+<%- include('../partial/footer.ejs')%>

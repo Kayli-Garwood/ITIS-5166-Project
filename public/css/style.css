@@ -1,19 +1,32 @@
-body{ 
-  min-height: 100vh; 
-  margin: 0; 
-  background-image: url(/images/background-pic.jpg);
+* {
+  box-sizing: border-box;
+}
 
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+body{ 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(/images/background-pic.jpg);
+  
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 header{ 
-  min-height:50px;
   background:whitesmoke; 
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
 }
 
 footer{ 
-  min-height:50px; 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background:whitesmoke; 
   text-align: center;
 }
@@ -62,7 +75,23 @@ li a:hover{
 }
 
 input[type=text], select, textarea {
-  width: 100%;
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=email] {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=password] {
+  width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -157,10 +186,6 @@ img.micro{
 
 ul.list{
   text-align: center;
-}
-
-*{
-  box-sizing: border-box;
 }
 
 .column1{
@@ -260,16 +285,12 @@ button:hover{
   margin-bottom: 70px;
 }
 
-.error{
-  border-style:double;
-  border-width:5px;
-  background-color: whitesmoke;
+.error2{
+  background: rgba(247, 59, 2, 0.924);
+  color: #fff;
+  width: 100%;
   text-align: center;
-  margin-left: 500px;
-  margin-right: 500px;
-  margin-top: 50px;
-  margin-bottom: 900px;
-  padding-top: 100px;
+  padding: 10px 10px;
 }
 
 .new {
@@ -291,8 +312,7 @@ button:hover{
   margin-left: 400px;
   margin-right: 400px;
   margin-top: 100px;
-  margin-bottom: 100px;
-  padding-top: 400px;
+  margin-bottom: 50px;
 }
 
 .edit {
@@ -313,7 +333,6 @@ button:hover{
 
 label{
   font-size: larger;
-  padding-left: 32.5em;
 }
 
 img.team, img.log {
@@ -325,16 +344,108 @@ img.team, img.log {
   width: 800px;
   }
 
-  td{
-    padding-right: 10px;
-    padding-bottom: 10px;
-    align-self: center;
-  }
-
 .content{
   text-align: center;
 }
 
 h1, h2, h3, h4, p {
   text-align: center;
+}
+
+.success {
+  background: rgba(108, 192, 112, 0.7);
+  color: #fff;
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  padding: 10px 10px;
+  padding-left: 50px;
+}
+
+.error {
+  background: rgba(247, 59, 2, 0.924);
+  color: #fff;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.signup, .login {
+  border-style:double;
+  border-width:5px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 150px;
+  margin-bottom: 70px;
+}
+
+label[for=password] {
+  text-align: center;
+}
+
+table.newConnection {
+  font-family: arial, sans-serif;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.editConnection {
+  font-family: arial, sans-serif;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+table.profile {
+  font-family: arial, sans-serif;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  width: 90%;
+  margin-bottom: 90px;
+}
+
+table.profile2 {
+  font-family: arial, sans-serif;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  width: 90%;
+  margin-bottom: 700px;
+}
+
+table.profile td, table.profile th {
+  text-align: center;
+  padding: 8px;
+  border: 3px solid black;
+}
+
+table.profile2 td, table.profile2 th {
+  text-align: center;
+  padding: 8px;
+  border: 3px solid black;
+}
+
+table.profile2 th {
+  background-color: whitesmoke;
+}
+
+table.profile th{
+  background-color: whitesmoke;
+}
+
+.username {
+  text-align: center;
+  font-family: Impact;
+}
+
+img.connect{
+  width: 23%;
 }

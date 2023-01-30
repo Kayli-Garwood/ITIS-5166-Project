@@ -1,19 +1,30 @@
 <%- include('../partial/header.ejs')%>
 
 <div class = "content">
-    <!-- <h4><%=connection.topic%></h4> -->
     <h1><u><em><%=connection.title %></em></u></h1>
-    <h2><u>Host:</u> <%=connection.hostName%></h2>
+    <h2><u>Category:</u> <%=connection.topic%></h2>
+    <h2><u>Host:</u> <%=connection.hostName.firstName + ' ' + connection.hostName.lastName%></h2>
     <div id = "connection"> <h2><u>Details:</u> <%=connection.details%></h2></div>
     <h2><u>Address:</u> <%=connection.address%></h2>
     <h2><u>Date:</u> <%=connection.date%></h2>
     <h2><u>Start Time:</u> <%=connection.startTime%></h2>
     <h2><u>End Time:</u> <%=connection.endTime%></h2>
     <img class = "connect" src= "<%=connection.image%>" alt="connect">
-    <form>
-        <button type="submit" formmethod="GET" formaction="/connections/<%= connection.id%>/edit">Edit</button>
+    <h1><%=rsvpSize%> people are going!</h1>
+    <%if(user == connection.hostName._id) {%>
+      <form>
+        <button type="submit" formmethod="GET" formaction="/connections/<%= connection.id%>/edit">Update</button>
         <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>/?_method=DELETE">Delete</button>
-    </form>
+      </form>
+    <%} else { %>
+      <h1>RSVP to attend!</h1>
+      <form>
+        <button type="submit" formmethod="POST" name="status" value="YES" formaction="/connections/<%=connection.id%>/rsvp">Yes</button> 
+        <button type="submit" formmethod="POST" name="status" value ="NO" formaction="/connections/<%= connection.id%>/rsvp">No</button>
+        <button type="submit" formmethod="POST" name="status" value="MAYBE" formaction="/connections/<%= connection.id%>/rsvp">Maybe</button>
+      </form>
+   <% } %>
+    
   </div>
 
 <%- include('../partial/footer.ejs')%>

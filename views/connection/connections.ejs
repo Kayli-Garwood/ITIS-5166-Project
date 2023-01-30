@@ -1,12 +1,12 @@
 <%- include('../partial/header.ejs')%>
 <div class = "content">
-  <%  if(connections.length) { %>
+  <%  if(data.connections.length) { %>
         <h1>Select a connection to learn more!</h1>
-        <%for(var i =0; i < category.length; i++){ %>
-            <h1><em><%= category[i] %></em></h1>
-            <% for(var j=0; j < connections.length; j++){
-                if(connections[j].topic == category[i]){%>
-                    <a href = "/connections/<%=connections[j].id%>"> <h2><%= connections[j].title%></h2></a>
+        <%for(var i =0; i < data.category.length; i++){ %>
+            <h1><em><%= data.category[i] %></em></h1>
+            <% for(var j=0; j < data.connections.length; j++){
+                if(data.connections[j].topic == data.category[i]){%>
+                    <a href = "/connections/<%=data.connections[j].id%>"> <h2><%= data.connections[j].title%></h2></a>
             <%}}%>
         <%} %>
     <% } else { %>
